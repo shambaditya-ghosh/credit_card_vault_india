@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CardVault India — Premium Credit Card Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-pale: #F5E6B8;
+  --dark: #0A0A0F;
+  --dark2: #111118;
+  --dark3: #1A1A24;
+  --dark4: #22222E;
+  --text: #E8E4DC;
+  --text-muted: #8A8478;
+  --accent: #4CADE8;
+  --accent2: #E84C4C;
+  --green: #4CE8A0;
+  --border: rgba(201,168,76,0.2);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--dark);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold);letter-spacing:2px;cursor:pointer;}
+.nav-logo span{color:var(--text);font-weight:300;}
+.nav-links{display:flex;gap:0.2rem;flex-wrap:wrap;}
+.nav-link{padding:0.4rem 0.8rem;font-size:0.72rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);cursor:pointer;border-radius:4px;transition:all 0.3s;border:1px solid transparent;}
+.nav-link:hover,.nav-link.active{color:var(--gold);border-color:var(--border);background:rgba(201,168,76,0.08);}
+.nav-cta{padding:0.5rem 1.2rem;background:var(--gold);color:var(--dark);font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-radius:4px;cursor:pointer;transition:all 0.3s;border:none;}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+
+/* PAGES */
+.page{display:none;min-height:100vh;padding-top:70px;animation:fadeIn 0.5s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;position:relative;overflow:hidden;padding:2rem;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,0.08) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 20%,rgba(76,173,232,0.05) 0%,transparent 50%),linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%);}
+.particles{position:absolute;inset:0;overflow:hidden;}
+.particle{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;animation:float linear infinite;opacity:0;}
+@keyframes float{0%{transform:translateY(100vh) translateX(0);opacity:0;}10%{opacity:0.6;}90%{opacity:0.3;}100%{transform:translateY(-10vh) translateX(50px);opacity:0;}}
+.hero-content{text-align:center;position:relative;z-index:2;max-width:900px;}
+.hero-badge{display:inline-block;padding:0.4rem 1.2rem;border:1px solid var(--gold);border-radius:50px;font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;animation:glow 2s ease-in-out infinite alternate;}
+@keyframes glow{from{box-shadow:0 0 5px rgba(201,168,76,0.2);}to{box-shadow:0 0 20px rgba(201,168,76,0.4);}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,7rem);font-weight:300;line-height:1;margin-bottom:1.5rem;letter-spacing:-1px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero p{font-size:1.1rem;color:var(--text-muted);max-width:600px;margin:0 auto 3rem;line-height:1.7;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-gold{padding:0.9rem 2.5rem;background:var(--gold);color:var(--dark);font-size:0.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:4px;cursor:pointer;transition:all 0.3s;border:none;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,0.3);}
+.btn-outline{padding:0.9rem 2.5rem;background:transparent;color:var(--gold);font-size:0.85rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:4px;cursor:pointer;transition:all 0.3s;border:1px solid var(--gold);}
+.btn-outline:hover{background:rgba(201,168,76,0.1);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:4rem;justify-content:center;margin-top:5rem;padding-top:3rem;border-top:1px solid var(--border);}
+.hero-stat .num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);display:block;}
+.hero-stat .lbl{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
+/* Floating cards */
+.floating-cards{position:absolute;right:-5%;top:50%;transform:translateY(-50%);perspective:1000px;}
+.float-card{width:220px;height:138px;border-radius:12px;position:absolute;animation:cardFloat 6s ease-in-out infinite;}
+.float-card:nth-child(1){background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(201,168,76,0.4);transform:rotateY(-15deg) rotateX(5deg);animation-delay:0s;}
+.float-card:nth-child(2){background:linear-gradient(135deg,#0f3460,#533483);border:1px solid rgba(76,173,232,0.3);transform:rotateY(-15deg) rotateX(5deg) translateY(-120px) translateX(30px);animation-delay:1s;opacity:0.7;}
+.float-card:nth-child(3){background:linear-gradient(135deg,#2d1b00,#5c3600);border:1px solid rgba(201,168,76,0.5);transform:rotateY(-15deg) rotateX(5deg) translateY(-240px) translateX(15px);animation-delay:2s;opacity:0.5;}
+@keyframes cardFloat{0%,100%{transform:rotateY(-15deg) rotateX(5deg) translateY(0);}50%{transform:rotateY(-12deg) rotateX(3deg) translateY(-15px);}}
+.float-card .chip{width:35px;height:28px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:5px;position:absolute;top:25px;left:20px;}
+.float-card .num-dots{position:absolute;bottom:30px;left:20px;font-family:'Space Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.6);letter-spacing:2px;}
+
+/* SECTION COMMON */
+.section{padding:6rem 3rem;}
+.section-header{text-align:center;margin-bottom:4rem;}
+.section-tag{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:1rem;}
+.section-sub{color:var(--text-muted);font-size:1rem;max-width:600px;margin:0 auto;}
+.divider{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:1.5rem auto;}
+
+/* CARDS GRID */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
+.cc-card{background:var(--dark3);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.4s;cursor:pointer;position:relative;}
+.cc-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,0.5);box-shadow:0 20px 50px rgba(0,0,0,0.5);}
+.cc-card-visual{height:160px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.cc-card-body{padding:1.5rem;}
+.cc-tag{display:inline-block;padding:0.25rem 0.7rem;border-radius:50px;font-size:0.65rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.8rem;}
+.tag-premium{background:rgba(201,168,76,0.15);color:var(--gold);}
+.tag-travel{background:rgba(76,173,232,0.15);color:var(--accent);}
+.tag-cashback{background:rgba(76,232,160,0.15);color:var(--green);}
+.tag-shopping{background:rgba(232,76,76,0.15);color:var(--accent2);}
+.cc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:0.3rem;}
+.cc-card .bank{font-size:0.75rem;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;}
+.cc-features{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.2rem;}
+.cc-feature{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--text-muted);}
+.cc-feature::before{content:'◆';color:var(--gold);font-size:0.5rem;flex-shrink:0;}
+.cc-footer{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid var(--border);}
+.cc-fee{font-size:0.8rem;color:var(--text-muted);}
+.cc-fee span{color:var(--text);font-weight:600;}
+
+/* COMPARISON TABLE */
+.comp-table{width:100%;border-collapse:collapse;background:var(--dark3);border-radius:12px;overflow:hidden;}
+.comp-table th{background:var(--dark4);padding:1rem 1.2rem;text-align:left;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);}
+.comp-table td{padding:0.9rem 1.2rem;border-bottom:1px solid var(--border);font-size:0.85rem;color:var(--text-muted);}
+.comp-table tr:last-child td{border-bottom:none;}
+.comp-table tr:hover td{background:rgba(201,168,76,0.04);}
+.comp-table td:first-child{color:var(--text);font-weight:500;}
+.badge-yes{color:var(--green);}
+.badge-no{color:var(--accent2);}
+.badge-lim{color:var(--gold);}
+
+/* LOUNGE */
+.lounge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
+.lounge-card{background:var(--dark3);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:all 0.3s;}
+.lounge-card:hover{border-color:rgba(201,168,76,0.5);transform:translateY(-4px);}
+.lounge-card .icon{font-size:2.5rem;margin-bottom:1rem;}
+.lounge-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:0.5rem;}
+.lounge-card p{font-size:0.83rem;color:var(--text-muted);line-height:1.6;}
+.lounge-count{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.lounge-num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:700;}
+
+/* FEES TABLE */
+.fees-section{background:var(--dark2);}
+.fees-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+.fee-card{background:var(--dark3);border:1px solid var(--border);border-radius:12px;padding:1.8rem;}
+.fee-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:0.3rem;}
+.fee-card .bank-label{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:block;}
+.fee-row{display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid rgba(201,168,76,0.08);font-size:0.83rem;}
+.fee-row:last-child{border-bottom:none;}
+.fee-row .label{color:var(--text-muted);}
+.fee-row .value{color:var(--text);font-weight:500;}
+.fee-row .value.free{color:var(--green);}
+.fee-row .value.high{color:var(--accent2);}
+
+/* BENEFITS */
+.benefits-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:1rem;}
+.benefit-item{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;background:var(--dark3);border:1px solid var(--border);border-radius:8px;transition:all 0.3s;}
+.benefit-item:hover{border-color:rgba(201,168,76,0.4);background:var(--dark4);}
+.benefit-icon{width:44px;height:44px;background:rgba(201,168,76,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.benefit-text h4{font-size:0.9rem;font-weight:600;margin-bottom:0.3rem;}
+.benefit-text p{font-size:0.78rem;color:var(--text-muted);line-height:1.5;}
+
+/* HERO CARD VISUAL */
+.visual-card{width:200px;height:125px;border-radius:10px;position:relative;overflow:hidden;}
+.vc-shine{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.05) 0%,transparent 50%,rgba(255,255,255,0.02) 100%);}
+.vc-network{position:absolute;bottom:10px;right:12px;font-size:1.2rem;opacity:0.7;}
+.vc-chip{position:absolute;top:20px;left:15px;width:32px;height:25px;background:linear-gradient(135deg,#c9a84c,#e8c97a);border-radius:4px;}
+.vc-name{position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,0.8);}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:2rem;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),transparent);}
+.tl-item{position:relative;padding:1.5rem 0 1.5rem 2rem;border-bottom:1px solid var(--border);}
+.tl-item::before{content:'';position:absolute;left:-0.4rem;top:1.8rem;width:0.8rem;height:0.8rem;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);}
+.tl-year{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--gold);letter-spacing:2px;margin-bottom:0.5rem;}
+.tl-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.3rem;}
+.tl-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.6;}
+
+/* RATING STARS */
+.stars{color:var(--gold);font-size:0.8rem;}
+
+/* APPLY FORM */
+.apply-form{max-width:700px;margin:0 auto;background:var(--dark3);border:1px solid var(--border);border-radius:16px;padding:3rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-group{margin-bottom:0.5rem;}
+.form-label{display:block;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+.form-input{width:100%;padding:0.8rem 1rem;background:var(--dark4);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;transition:all 0.3s;outline:none;}
+.form-input:focus{border-color:var(--gold);background:rgba(201,168,76,0.05);}
+.form-select{width:100%;padding:0.8rem 1rem;background:var(--dark4);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;cursor:pointer;}
+.form-select:focus{border-color:var(--gold);}
+
+/* PROGRESS BAR */
+.progress-bar{height:4px;background:var(--dark4);border-radius:2px;overflow:hidden;margin-bottom:0.4rem;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;transition:width 1s ease;}
+
+/* TABS */
+.tabs{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap;}
+.tab{padding:0.6rem 1.5rem;border:1px solid var(--border);border-radius:50px;font-size:0.8rem;cursor:pointer;transition:all 0.3s;color:var(--text-muted);}
+.tab.active,.tab:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);}
+
+/* CARD FLIP */
+.flip-container{perspective:1000px;width:320px;height:200px;cursor:pointer;}
+.flipper{width:100%;height:100%;transition:transform 0.7s;transform-style:preserve-3d;position:relative;}
+.flip-container:hover .flipper{transform:rotateY(180deg);}
+.front,.back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:16px;padding:1.5rem;}
+.back{transform:rotateY(180deg);}
+
+/* CHIP ANIMATION */
+.chip-anim{display:inline-flex;gap:0.3rem;align-items:center;}
+.chip-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.5s ease-in-out infinite;}
+.chip-dot:nth-child(2){animation-delay:0.2s;}
+.chip-dot:nth-child(3){animation-delay:0.4s;}
+@keyframes pulse{0%,100%{opacity:0.3;transform:scale(1);}50%{opacity:1;transform:scale(1.3);}}
+
+/* NEWS TICKER */
+.ticker{background:var(--gold);color:var(--dark);padding:0.5rem 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-block;animation:ticker 30s linear infinite;}
+@keyframes ticker{0%{transform:translateX(100vw);}100%{transform:translateX(-100%);};}
+.ticker-text{font-size:0.75rem;font-weight:600;letter-spacing:1px;}
+
+/* GRADIENT CARDS */
+.grad-1{background:linear-gradient(135deg,#0a0a1a 0%,#1a0a30 50%,#0a0a1a 100%);}
+.grad-2{background:linear-gradient(135deg,#0a1a2a 0%,#0a2a40 50%,#0a1a2a 100%);}
+.grad-3{background:linear-gradient(135deg,#1a1000 0%,#3a2000 50%,#1a1000 100%);}
+.grad-4{background:linear-gradient(135deg,#001a0a 0%,#002a18 50%,#001a0a 100%);}
+.grad-5{background:linear-gradient(135deg,#1a0010 0%,#300020 50%,#1a0010 100%);}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* FOOTER */
+footer{background:var(--dark2);border-top:1px solid var(--border);padding:4rem 3rem 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-brand .logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--gold);}
+.footer-brand p{color:var(--text-muted);font-size:0.83rem;margin-top:1rem;line-height:1.7;}
+.footer-col h4{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.footer-links{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-link{font-size:0.83rem;color:var(--text-muted);cursor:pointer;transition:color 0.3s;}
+.footer-link:hover{color:var(--gold);}
+.footer-bottom{padding-top:2rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:0.78rem;color:var(--text-muted);}
+.disclaimer{font-size:0.7rem;color:var(--text-muted);max-width:600px;text-align:right;line-height:1.5;}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;padding:2rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.marquee{display:flex;gap:3rem;animation:marquee 20s linear infinite;white-space:nowrap;}
+.marquee-item{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--text-muted);flex-shrink:0;}
+.marquee-item em{color:var(--gold);font-style:italic;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);};}
+
+/* ALERT BANNER */
+.alert-banner{background:rgba(201,168,76,0.08);border:1px solid var(--border);border-radius:8px;padding:1rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;}
+.alert-icon{font-size:1.2rem;flex-shrink:0;}
+.alert-text{font-size:0.83rem;color:var(--text-muted);line-height:1.5;}
+.alert-text strong{color:var(--gold);}
+
+/* HERO VISUAL CARD STRIP */
+.card-strip{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;}
+.strip-card{width:180px;height:113px;border-radius:10px;position:relative;overflow:hidden;transition:all 0.4s;flex-shrink:0;}
+.strip-card:hover{transform:translateY(-8px) scale(1.05);}
+
+/* STAT BOX */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.stat-box{background:var(--dark3);border:1px solid var(--border);border-radius:12px;padding:1.8rem;text-align:center;}
+.stat-box .big{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);display:block;}
+.stat-box .lbl{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-top:0.3rem;}
+
+/* ELIGIBILITY */
+.elig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+.elig-box{background:var(--dark3);border:1px solid var(--border);border-radius:10px;padding:1.5rem;text-align:center;}
+.elig-box .icon{font-size:2rem;margin-bottom:0.8rem;}
+.elig-box h4{font-size:0.85rem;font-weight:600;margin-bottom:0.3rem;}
+.elig-box p{font-size:0.75rem;color:var(--text-muted);}
+
+/* NETWORK LOGOS */
+.network-grid{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:3rem;}
+.network-logo{padding:1rem 2.5rem;background:var(--dark3);border:1px solid var(--border);border-radius:8px;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;transition:all 0.3s;}
+.network-logo:hover{border-color:var(--gold);transform:translateY(-3px);}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .section{padding:4rem 1.5rem;}
+  .footer-grid{grid-template-columns:1fr;}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-stats{gap:2rem;}
+  .form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-text">✦ HDFC Infinia — Best Premium Card 2024 &nbsp;&nbsp;&nbsp; ✦ SBI SimplyCLICK — Best Online Shopping Card &nbsp;&nbsp;&nbsp; ✦ Axis Atlas — Best Travel Card &nbsp;&nbsp;&nbsp; ✦ ICICI Amazon Pay — Best Cashback Card &nbsp;&nbsp;&nbsp; ✦ Amex Platinum — Best Luxury Card &nbsp;&nbsp;&nbsp; ✦ Kotak 811 — Best Zero-Fee Card &nbsp;&nbsp;&nbsp; ✦ YES First Exclusive — Best Airline Miles Card &nbsp;&nbsp;&nbsp; ✦ IndusInd Pinnacle — Rising Premium Card &nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span class="ticker-text">✦ HDFC Infinia — Best Premium Card 2024 &nbsp;&nbsp;&nbsp; ✦ SBI SimplyCLICK — Best Online Shopping Card &nbsp;&nbsp;&nbsp; ✦ Axis Atlas — Best Travel Card &nbsp;&nbsp;&nbsp; ✦ ICICI Amazon Pay — Best Cashback Card &nbsp;&nbsp;&nbsp; ✦ Amex Platinum — Best Luxury Card &nbsp;&nbsp;&nbsp; ✦ Kotak 811 — Best Zero-Fee Card &nbsp;&nbsp;&nbsp; ✦ YES First Exclusive — Best Airline Miles Card &nbsp;&nbsp;&nbsp; ✦ IndusInd Pinnacle — Rising Premium Card &nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">Card<span>Vault</span></div>
+  <div class="nav-links">
+    <span class="nav-link active" onclick="showPage('home')">Home</span>
+    <span class="nav-link" onclick="showPage('featured')">Featured</span>
+    <span class="nav-link" onclick="showPage('hdfc')">HDFC</span>
+    <span class="nav-link" onclick="showPage('sbi')">SBI</span>
+    <span class="nav-link" onclick="showPage('icici')">ICICI</span>
+    <span class="nav-link" onclick="showPage('axis')">Axis</span>
+    <span class="nav-link" onclick="showPage('amex')">Amex</span>
+    <span class="nav-link" onclick="showPage('lounge')">Lounge</span>
+    <span class="nav-link" onclick="showPage('rewards')">Rewards</span>
+    <span class="nav-link" onclick="showPage('fees')">Fees</span>
+    <span class="nav-link" onclick="showPage('travel')">Travel</span>
+    <span class="nav-link" onclick="showPage('shopping')">Shopping</span>
+    <span class="nav-link" onclick="showPage('premium')">Premium</span>
+    <span class="nav-link" onclick="showPage('compare')">Compare</span>
+    <span class="nav-link" onclick="showPage('eligibility')">Eligibility</span>
+    <span class="nav-link" onclick="showPage('tips')">Tips</span>
+    <span class="nav-link" onclick="showPage('apply')">Apply</span>
+  </div>
+  <button class="nav-cta" onclick="showPage('apply')">Apply Now</button>
+</nav>
+
+<!-- ======================== PAGE: HOME ======================== -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-badge">India's #1 Credit Card Guide</div>
+      <h1>Find Your <em>Perfect</em><br>Credit Card</h1>
+      <p>Compare 100+ credit cards from India's top banks. Uncover hidden benefits, maximize rewards, and choose the card that works hardest for you.</p>
+      <div class="hero-btns">
+        <button class="btn-gold" onclick="showPage('featured')">Explore Cards</button>
+        <button class="btn-outline" onclick="showPage('compare')">Compare Cards</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num" data-count="50">0</span><span class="lbl">Cards Reviewed</span></div>
+        <div class="hero-stat"><span class="num" data-count="15">0</span><span class="lbl">Banks Covered</span></div>
+        <div class="hero-stat"><span class="num" data-count="2">0</span><span class="lbl">Mn Users Helped</span></div>
+        <div class="hero-stat"><span class="num" data-count="100">0</span><span class="lbl">% Unbiased</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span class="marquee-item"><em>HDFC Infinia</em></span>
+      <span class="marquee-item">SBI Elite</span>
+      <span class="marquee-item"><em>Axis Atlas</em></span>
+      <span class="marquee-item">ICICI Sapphiro</span>
+      <span class="marquee-item"><em>Amex Platinum</em></span>
+      <span class="marquee-item">Kotak Royale</span>
+      <span class="marquee-item"><em>YES First</em></span>
+      <span class="marquee-item">IndusInd Pinnacle</span>
+      <span class="marquee-item"><em>HDFC Infinia</em></span>
+      <span class="marquee-item">SBI Elite</span>
+      <span class="marquee-item"><em>Axis Atlas</em></span>
+      <span class="marquee-item">ICICI Sapphiro</span>
+      <span class="marquee-item"><em>Amex Platinum</em></span>
+      <span class="marquee-item">Kotak Royale</span>
+      <span class="marquee-item"><em>YES First</em></span>
+      <span class="marquee-item">IndusInd Pinnacle</span>
+    </div>
+  </div>
+
+  <!-- QUICK CATEGORIES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Browse by Category</span>
+      <h2 class="section-title">What Are You Looking For?</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;">
+      <div class="lounge-card" style="text-align:center;cursor:pointer;" onclick="showPage('travel')">
+        <div class="icon">✈️</div>
+        <h3>Travel Cards</h3>
+        <p>Miles, lounge access & forex benefits</p>
+      </div>
+      <div class="lounge-card" style="text-align:center;cursor:pointer;" onclick="showPage('shopping')">
+        <div class="icon">🛍️</div>
+        <h3>Shopping Cards</h3>
+        <p>Cashback on online & offline spends</p>
+      </div>
+      <div class="lounge-card" style="text-align:center;cursor:pointer;" onclick="showPage('premium')">
+        <div class="icon">💎</div>
+        <h3>Premium Cards</h3>
+        <p>Luxury lifestyle & concierge services</p>
+      </div>
+      <div class="lounge-card" style="text-align:center;cursor:pointer;" onclick="showPage('rewards')">
+        <div class="icon">🎁</div>
+        <h3>Rewards Cards</h3>
+        <p>Maximum points on every spend</p>
+      </div>
+      <div class="lounge-card" style="text-align:center;cursor:pointer;" onclick="showPage('featured')">
+        <div class="icon">⛽</div>
+        <h3>Fuel Cards</h3>
+        <p>Surcharge waiver & fuel rewards</p>
+      </div>
+      <div class="lounge-card" style="text-align:center;cursor:pointer;" onclick="showPage('fees')">
+        <div class="icon">🆓</div>
+        <h3>Zero Fee Cards</h3>
+        <p>Lifetime free credit cards</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP PICKS STRIP -->
+  <div class="section" style="background:var(--dark2);padding-top:4rem;padding-bottom:4rem;">
+    <div class="section-header">
+      <span class="section-tag">Editor's Choice 2024</span>
+      <h2 class="section-title">Top Cards This Month</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="cards-grid">
+      <div class="cc-card" onclick="showPage('hdfc')">
+        <div class="cc-card-visual grad-3">
+          <div class="vc-chip"></div>
+          <div class="vc-network" style="position:absolute;bottom:10px;right:12px;font-size:1.5rem;">⬡⬡</div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.7)">HDFC INFINIA</div>
+          <div style="position:absolute;top:10px;right:12px;font-size:0.6rem;color:var(--gold);letter-spacing:1px;">METAL</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Super Premium</span>
+          <h3>HDFC Infinia Metal</h3>
+          <div class="bank">HDFC Bank</div>
+          <div class="cc-features">
+            <div class="cc-feature">5 Reward Points per ₹150 spent</div>
+            <div class="cc-feature">Unlimited domestic & international lounge</div>
+            <div class="cc-feature">Golf privileges at 900+ courses worldwide</div>
+            <div class="cc-feature">1:1 reward point transfer to airlines</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹12,500+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card" onclick="showPage('axis')">
+        <div class="cc-card-visual grad-2">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.7)">AXIS ATLAS</div>
+          <div style="position:absolute;top:10px;right:12px;font-size:0.6rem;color:var(--accent);letter-spacing:1px;">VISA</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-travel">Travel</span>
+          <h3>Axis Bank Atlas</h3>
+          <div class="bank">Axis Bank</div>
+          <div class="cc-features">
+            <div class="cc-feature">5 EDGE Miles per ₹100 on travel</div>
+            <div class="cc-feature">Complimentary Dragon Pass lounge access</div>
+            <div class="cc-feature">Transfer miles to 10+ airline partners</div>
+            <div class="cc-feature">No forex markup on overseas spends</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹5,000+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card" onclick="showPage('icici')">
+        <div class="cc-card-visual grad-4">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.7)">AMAZON PAY ICICI</div>
+          <div style="position:absolute;top:10px;right:12px;font-size:0.6rem;color:var(--green);letter-spacing:1px;">VISA</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Cashback</span>
+          <h3>Amazon Pay ICICI</h3>
+          <div class="bank">ICICI Bank</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% cashback on Amazon (Prime members)</div>
+            <div class="cc-feature">2% on Amazon (non-Prime) & bill payments</div>
+            <div class="cc-feature">1% on all other spends</div>
+            <div class="cc-feature">Lifetime FREE — zero annual fee</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span style="color:var(--green)">FREE</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: FEATURED ======================== -->
+<div id="page-featured" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">All Cards</span>
+      <h2 class="section-title">Featured Credit Cards 2024</h2>
+      <p class="section-sub">Hand-picked cards offering the best value across categories</p>
+      <div class="divider"></div>
+    </div>
+    <div class="tabs">
+      <span class="tab active" onclick="filterCards('all',this)">All Cards</span>
+      <span class="tab" onclick="filterCards('premium',this)">Premium</span>
+      <span class="tab" onclick="filterCards('travel',this)">Travel</span>
+      <span class="tab" onclick="filterCards('cashback',this)">Cashback</span>
+      <span class="tab" onclick="filterCards('shopping',this)">Shopping</span>
+    </div>
+    <div class="cards-grid" id="featured-grid">
+      <!-- Cards rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: HDFC ======================== -->
+<div id="page-hdfc" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">HDFC Bank</span>
+      <h2 class="section-title">HDFC Credit Cards</h2>
+      <p class="section-sub">India's largest private sector bank with the most comprehensive credit card portfolio</p>
+      <div class="divider"></div>
+    </div>
+    <div class="alert-banner">
+      <span class="alert-icon">ℹ️</span>
+      <div class="alert-text"><strong>HDFC SmartBuy Portal:</strong> Get up to 10X reward points on travel, shopping & more through HDFC's exclusive SmartBuy portal. Accelerate your reward earning significantly.</div>
+    </div>
+    <div class="cards-grid">
+      <div class="cc-card">
+        <div class="cc-card-visual grad-3">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">HDFC INFINIA METAL</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Super Premium</span>
+          <h3>HDFC Infinia Metal</h3>
+          <div class="bank">HDFC Bank · Visa Infinite</div>
+          <div class="cc-features">
+            <div class="cc-feature">5 RP per ₹150 (10X via SmartBuy)</div>
+            <div class="cc-feature">Unlimited Priority Pass + domestic lounge</div>
+            <div class="cc-feature">Golf: 6 complimentary rounds/month</div>
+            <div class="cc-feature">1.5% forex markup (lowest in premium)</div>
+            <div class="cc-feature">Concierge: dedicated 24/7</div>
+            <div class="cc-feature">Air Accident Cover: ₹3 Cr</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹12,500+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#1a0500,#3a1000);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">HDFC DINERS BLACK</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Premium</span>
+          <h3>HDFC Diners Club Black</h3>
+          <div class="bank">HDFC Bank · Diners Club</div>
+          <div class="cc-features">
+            <div class="cc-feature">5 RP per ₹150 spends</div>
+            <div class="cc-feature">Unlimited airport lounge access (Diners)</div>
+            <div class="cc-feature">10X RP via SmartBuy portal</div>
+            <div class="cc-feature">Annual Fee waiver at ₹5L annual spends</div>
+            <div class="cc-feature">Golf: 6 rounds/quarter</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹10,000+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual grad-1">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">HDFC REGALIA GOLD</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-travel">Premium Travel</span>
+          <h3>HDFC Regalia Gold</h3>
+          <div class="bank">HDFC Bank · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">4 RP per ₹150 spends</div>
+            <div class="cc-feature">12 domestic + 6 international lounge/year</div>
+            <div class="cc-feature">Milestone: ₹5000 voucher at ₹5L spend</div>
+            <div class="cc-feature">2% forex markup</div>
+            <div class="cc-feature">Insurance cover up to ₹1.5 Cr</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹2,500+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual grad-4">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">HDFC MILLENNIA</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Cashback</span>
+          <h3>HDFC Millennia</h3>
+          <div class="bank">HDFC Bank · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% cashback on Amazon, Flipkart, Myntra</div>
+            <div class="cc-feature">1% cashback on all other spends</div>
+            <div class="cc-feature">8 domestic lounge access/year</div>
+            <div class="cc-feature">Annual Fee waiver at ₹1L/year spend</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹1,000+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#001520,#003040);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">HDFC SWIGGY</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Co-Branded</span>
+          <h3>HDFC Swiggy Card</h3>
+          <div class="bank">HDFC Bank · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">10% cashback on Swiggy (food, Instamart)</div>
+            <div class="cc-feature">5% on online spends</div>
+            <div class="cc-feature">1% on all other categories</div>
+            <div class="cc-feature">₹500/month cashback cap</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹500+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#150020,#300040);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">HDFC TATA NEU</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-shopping">Shopping</span>
+          <h3>HDFC Tata Neu Plus</h3>
+          <div class="bank">HDFC Bank · Mastercard</div>
+          <div class="cc-features">
+            <div class="cc-feature">7% NeuCoins on Tata ecosystem spends</div>
+            <div class="cc-feature">1% NeuCoins on all other spends</div>
+            <div class="cc-feature">EMI at 0% interest on big purchases</div>
+            <div class="cc-feature">8 domestic lounge visits/year</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹499+GST</span></span>
+            <div class="stars">★★★☆☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: SBI ======================== -->
+<div id="page-sbi" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">State Bank of India</span>
+      <h2 class="section-title">SBI Credit Cards</h2>
+      <p class="section-sub">India's largest bank — trusted by millions with cards for every need</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cards-grid">
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#00100a,#002015);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">SBI ELITE</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Premium</span>
+          <h3>SBI Card ELITE</h3>
+          <div class="bank">SBI Card · Visa/Mastercard</div>
+          <div class="cc-features">
+            <div class="cc-feature">5X reward points on dining, groceries, dept.</div>
+            <div class="cc-feature">6 international + domestic lounge access</div>
+            <div class="cc-feature">₹3,000 movie vouchers + ₹5,000 welcome gift</div>
+            <div class="cc-feature">Milestone: ₹10,000 e-GV at ₹10L spends</div>
+            <div class="cc-feature">Annual Fee waiver at ₹10L spend</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹4,999+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#100010,#200020);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">SBI AURUM</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Super Premium</span>
+          <h3>SBI Card AURUM</h3>
+          <div class="bank">SBI Card · Visa Infinite</div>
+          <div class="cc-features">
+            <div class="cc-feature">6 RP per ₹100 on all spends</div>
+            <div class="cc-feature">Unlimited Priority Pass lounge access</div>
+            <div class="cc-feature">Buy 1 Get 1 on BookMyShow (4/month)</div>
+            <div class="cc-feature">Taj Epicure membership complimentary</div>
+            <div class="cc-feature">Golf: 4 complimentary rounds/month</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹9,999+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#0a1500,#152500);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">SBI SIMPLYCLICK</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-shopping">Online Shopping</span>
+          <h3>SBI SimplyCLICK</h3>
+          <div class="bank">SBI Card · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">10X RP on Amazon, Cleartrip, Apollo, Swiggy</div>
+            <div class="cc-feature">5X RP on all other online spends</div>
+            <div class="cc-feature">₹500 Amazon voucher on joining</div>
+            <div class="cc-feature">Annual fee reversal at ₹1L/year spends</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹499+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#001020,#002040);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">SBI BPCL</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Fuel</span>
+          <h3>SBI BPCL Octane</h3>
+          <div class="bank">SBI Card · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">25X RP at BPCL petrol pumps</div>
+            <div class="cc-feature">7.25% value back on fuel at BPCL</div>
+            <div class="cc-feature">1% fuel surcharge waiver (all stations)</div>
+            <div class="cc-feature">6X RP on groceries & dining</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹1,499+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: ICICI ======================== -->
+<div id="page-icici" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">ICICI Bank</span>
+      <h2 class="section-title">ICICI Credit Cards</h2>
+      <p class="section-sub">Innovative products for every lifestyle — from students to super-premium</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cards-grid">
+      <div class="cc-card">
+        <div class="cc-card-visual grad-4">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AMAZON PAY ICICI</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Best Cashback</span>
+          <h3>Amazon Pay ICICI</h3>
+          <div class="bank">ICICI Bank · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% cashback — Amazon (Prime members)</div>
+            <div class="cc-feature">2% — Amazon (non-Prime), bill pay, fuel</div>
+            <div class="cc-feature">1% on all other eligible spends</div>
+            <div class="cc-feature">Cashback directly to Amazon Pay wallet</div>
+            <div class="cc-feature">Lifetime FREE card</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span style="color:var(--green)">FREE</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#200030,#400060);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">ICICI SAPPHIRO</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Premium</span>
+          <h3>ICICI Sapphiro</h3>
+          <div class="bank">ICICI Bank · Visa Signature</div>
+          <div class="cc-features">
+            <div class="cc-feature">4 RP per ₹100 on international spends</div>
+            <div class="cc-feature">2 RP per ₹100 on domestic spends</div>
+            <div class="cc-feature">4 international + domestic lounge/quarter</div>
+            <div class="cc-feature">Golf: 2 complimentary rounds/month</div>
+            <div class="cc-feature">Welcome vouchers worth ₹9,000</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹6,500+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#150020,#250035);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">ICICI EMERALDE</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Super Premium</span>
+          <h3>ICICI Emeralde Private Metal</h3>
+          <div class="bank">ICICI Bank · Visa Infinite</div>
+          <div class="cc-features">
+            <div class="cc-feature">6 RP per ₹100 — all categories</div>
+            <div class="cc-feature">Unlimited Priority Pass lounge access</div>
+            <div class="cc-feature">Exclusive dining at Taj, ITC & Marriott</div>
+            <div class="cc-feature">Personal travel concierge</div>
+            <div class="cc-feature">Insurance: ₹2 Cr air accident</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹12,000+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#001500,#003000);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">ICICI HPCL CORAL</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Fuel</span>
+          <h3>ICICI HPCL Coral</h3>
+          <div class="bank">ICICI Bank · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">6% savings on HPCL fuel & LPG</div>
+            <div class="cc-feature">2.5% cashback on groceries</div>
+            <div class="cc-feature">1% fuel surcharge waiver up to ₹4,000</div>
+            <div class="cc-feature">2 domestic lounge visits/quarter</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹199+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: AXIS ======================== -->
+<div id="page-axis" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Axis Bank</span>
+      <h2 class="section-title">Axis Bank Credit Cards</h2>
+      <p class="section-sub">EDGE loyalty ecosystem — earn & transfer miles across partners seamlessly</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cards-grid">
+      <div class="cc-card">
+        <div class="cc-card-visual grad-2">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AXIS ATLAS</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-travel">Best Travel</span>
+          <h3>Axis Bank Atlas</h3>
+          <div class="bank">Axis Bank · Visa Infinite</div>
+          <div class="cc-features">
+            <div class="cc-feature">5 EDGE Miles per ₹100 on travel (direct)</div>
+            <div class="cc-feature">2 EDGE Miles per ₹100 on all other</div>
+            <div class="cc-feature">Unlimited Dragon Pass lounge access</div>
+            <div class="cc-feature">Transfer to IndiGo, Air India, Accor, IHG</div>
+            <div class="cc-feature">Zero forex markup</div>
+            <div class="cc-feature">10,000 bonus miles on each milestone</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹5,000+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#1a0a00,#3a1500);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AXIS MAGNUS</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Super Premium</span>
+          <h3>Axis Bank Magnus</h3>
+          <div class="bank">Axis Bank · Mastercard World</div>
+          <div class="cc-features">
+            <div class="cc-feature">12 EDGE Reward Points per ₹200</div>
+            <div class="cc-feature">Unlimited Priority Pass lounge access</div>
+            <div class="cc-feature">EDGE Miles transfer to 10+ airlines</div>
+            <div class="cc-feature">10X rewards on travel via Axis portal</div>
+            <div class="cc-feature">Complimentary Dineout Plus membership</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹10,000+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual grad-5">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AXIS FLIPKART</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-shopping">Co-Branded</span>
+          <h3>Axis Flipkart Card</h3>
+          <div class="bank">Axis Bank · Visa Signature</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% unlimited cashback on Flipkart, Myntra</div>
+            <div class="cc-feature">4% cashback on preferred merchants</div>
+            <div class="cc-feature">1.5% cashback on all other spends</div>
+            <div class="cc-feature">No cap on cashback earnings</div>
+            <div class="cc-feature">4 domestic lounge/year</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹500+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#002010,#004020);">
+          <div class="vc-chip"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AXIS ACE</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Cashback</span>
+          <h3>Axis Ace Credit Card</h3>
+          <div class="bank">Axis Bank · Visa</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% cashback on bill payments (Google Pay)</div>
+            <div class="cc-feature">4% on Swiggy, Zomato, Ola</div>
+            <div class="cc-feature">2% on all other spends (no limit)</div>
+            <div class="cc-feature">4 domestic lounge visits/year</div>
+            <div class="cc-feature">Fuel surcharge waiver 1%</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹499+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: AMEX ======================== -->
+<div id="page-amex" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">American Express</span>
+      <h2 class="section-title">Amex Credit Cards India</h2>
+      <p class="section-sub">Unparalleled service, exclusive Membership Rewards ecosystem & global acceptance</p>
+      <div class="divider"></div>
+    </div>
+    <div class="alert-banner">
+      <span class="alert-icon">⚠️</span>
+      <div class="alert-text"><strong>Note:</strong> Amex has limited acceptance at small merchants in India. However, online acceptance is near-universal and Amex's rewards value is exceptional for those who can maximize it.</div>
+    </div>
+    <div class="cards-grid">
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#0a0a0a,#1a1a1a);border:1px solid #333;">
+          <div style="position:absolute;top:20px;left:20px;width:35px;height:35px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AMEX PLATINUM</div>
+          <div style="position:absolute;top:15px;right:15px;font-size:0.9rem;color:var(--gold);">◆◆◆</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Ultra Premium</span>
+          <h3>Amex Platinum Charge</h3>
+          <div class="bank">American Express</div>
+          <div class="cc-features">
+            <div class="cc-feature">Unlimited Priority Pass + Centurion Lounges</div>
+            <div class="cc-feature">5X MR Points on IndiGo, Air India, Cleartrip</div>
+            <div class="cc-feature">The Hotel Collection & Fine Hotels resorts</div>
+            <div class="cc-feature">Personal Travel Advisor & 24/7 Concierge</div>
+            <div class="cc-feature">Transfer to 7 airline partners incl. BA, SQ</div>
+            <div class="cc-feature">Global Dining by Resy access</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹60,000+GST</span></span>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#1a1a00,#2a2a10);">
+          <div style="position:absolute;top:20px;left:20px;width:35px;height:35px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#e8c97a);opacity:0.7;"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AMEX GOLD CHARGE</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-premium">Premium</span>
+          <h3>Amex Gold Charge Card</h3>
+          <div class="bank">American Express</div>
+          <div class="cc-features">
+            <div class="cc-feature">3X MR Points on IndiGo & travel portals</div>
+            <div class="cc-feature">2X MR Points on all other spends</div>
+            <div class="cc-feature">₹5000 Taj voucher on spends > ₹1.5L/year</div>
+            <div class="cc-feature">Transfer to Jet Privilege, IndiGo 6E</div>
+            <div class="cc-feature">Exclusive dining privileges</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹4,500+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#001a15,#003028);">
+          <div style="position:absolute;top:20px;left:20px;width:35px;height:25px;border-radius:4px;background:linear-gradient(135deg,#c9a84c,#e8c97a);opacity:0.7;"></div>
+          <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AMEX MRCC</div>
+        </div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Entry Premium</span>
+          <h3>Amex Membership Rewards</h3>
+          <div class="bank">American Express</div>
+          <div class="cc-features">
+            <div class="cc-feature">1 MR Point per ₹50 spent</div>
+            <div class="cc-feature">1000 bonus points for 4 txns/month ≥ ₹1000</div>
+            <div class="cc-feature">Redeem against 18-karat gold coins</div>
+            <div class="cc-feature">Transfer to IndiGo 6E Rewards</div>
+            <div class="cc-feature">SmartEarn partner cashback</div>
+          </div>
+          <div class="cc-footer">
+            <span class="cc-fee">Annual Fee: <span>₹1,500+GST</span></span>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: LOUNGE ======================== -->
+<div id="page-lounge" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Lounge Access Guide</span>
+      <h2 class="section-title">Airport Lounge Benefits</h2>
+      <p class="section-sub">Compare lounge access across India's top credit cards</p>
+      <div class="divider"></div>
+    </div>
+    <div class="stat-grid" style="margin-bottom:3rem;">
+      <div class="stat-box"><span class="big">1,300+</span><span class="lbl">Global Lounges</span></div>
+      <div class="stat-box"><span class="big">58+</span><span class="lbl">Indian Airports</span></div>
+      <div class="stat-box"><span class="big">∞</span><span class="lbl">Unlimited Access (Premium)</span></div>
+      <div class="stat-box"><span class="big">₹2,500</span><span class="lbl">Avg Day-Pass Cost</span></div>
+    </div>
+    <div class="lounge-grid">
+      <div class="lounge-card">
+        <div class="icon">🏆</div>
+        <h3>HDFC Infinia</h3>
+        <p>Unlimited domestic + international Priority Pass lounge access. No guest limit constraints for cardholders. Best-in-class access.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">∞</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+      <div class="lounge-card">
+        <div class="icon">✈️</div>
+        <h3>Axis Atlas</h3>
+        <p>Dragon Pass membership with unlimited domestic & international airport lounge access. Guest access at ₹2 per USD.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">∞</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+      <div class="lounge-card">
+        <div class="icon">💳</div>
+        <h3>SBI Card ELITE</h3>
+        <p>6 international lounge visits via Priority Pass + 6 domestic visits via VISA/Mastercard program per year.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">12</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+      <div class="lounge-card">
+        <div class="icon">🌟</div>
+        <h3>ICICI Sapphiro</h3>
+        <p>4 domestic + 4 international lounge visits every quarter. Priority Pass for international lounges.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">32</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+      <div class="lounge-card">
+        <div class="icon">🎯</div>
+        <h3>HDFC Regalia Gold</h3>
+        <p>12 domestic lounge visits + 6 international Priority Pass visits per year. Good value for mid-premium users.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">18</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+      <div class="lounge-card">
+        <div class="icon">💼</div>
+        <h3>Axis Magnus</h3>
+        <p>Unlimited Priority Pass + Mastercard Lounge Access. Full guest access for premium travelers who fly frequently.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">∞</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+      <div class="lounge-card">
+        <div class="icon">🏛️</div>
+        <h3>Amex Platinum</h3>
+        <p>Access to Centurion Lounges globally + Priority Pass Prestige. Most exclusive lounge network in India.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">∞</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+      <div class="lounge-card">
+        <div class="icon">🎁</div>
+        <h3>HDFC Millennia</h3>
+        <p>8 domestic airport lounge visits per year. Good entry-level card for domestic travelers in India.</p>
+        <div class="lounge-count">
+          <span class="lounge-num">8</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);">Visits/Year</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:3rem;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem;">Lounge Networks in India</h3>
+      <div class="network-grid">
+        <div class="network-logo">Priority<br><span style="font-style:italic;color:var(--gold);">Pass</span></div>
+        <div class="network-logo">Dragon<br><span style="font-style:italic;color:var(--accent);">Pass</span></div>
+        <div class="network-logo">Visa<br><span style="font-style:italic;color:var(--text-muted);">Lounges</span></div>
+        <div class="network-logo">Mastercard<br><span style="font-style:italic;color:var(--accent2);">Lounges</span></div>
+        <div class="network-logo">Centurion<br><span style="font-style:italic;color:var(--gold-light);">Amex</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: REWARDS ======================== -->
+<div id="page-rewards" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Rewards & Cashback</span>
+      <h2 class="section-title">Maximize Your Earnings</h2>
+      <p class="section-sub">Understanding reward programs, earn rates & redemption strategies</p>
+      <div class="divider"></div>
+    </div>
+    <div style="margin-bottom:3rem;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem;">Reward Point Value Comparison</h3>
+      <table class="comp-table">
+        <thead><tr><th>Card</th><th>Earn Rate</th><th>Point Value</th><th>Effective Return</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>HDFC Infinia</td><td>5 RP/₹150</td><td>~₹0.50–1.00</td><td><span class="badge-yes">~3.3%</span></td><td>Travel & Shopping</td></tr>
+          <tr><td>Axis Atlas</td><td>5 EDGE/₹100</td><td>~₹0.30–0.40</td><td><span class="badge-yes">~2.5–4%</span></td><td>Airline Miles</td></tr>
+          <tr><td>Amex MRCC</td><td>1 MR/₹50</td><td>~₹0.25–2.00</td><td><span class="badge-yes">~0.5–4%</span></td><td>Gold/Transfers</td></tr>
+          <tr><td>HDFC Regalia</td><td>4 RP/₹150</td><td>~₹0.50</td><td>~1.3%</td><td>Daily Spends</td></tr>
+          <tr><td>SBI AURUM</td><td>6 RP/₹100</td><td>~₹0.25</td><td>~1.5%</td><td>All Categories</td></tr>
+          <tr><td>ICICI Sapphiro</td><td>4 RP/₹100 intl</td><td>~₹0.25</td><td>~1%</td><td>International</td></tr>
+          <tr><td>Amazon Pay ICICI</td><td>5% cashback</td><td>Cash Equivalent</td><td><span class="badge-yes">5%</span></td><td>Amazon Spends</td></tr>
+          <tr><td>Axis Ace</td><td>2–5% cashback</td><td>Cash Equivalent</td><td><span class="badge-yes">2–5%</span></td><td>Bills & Apps</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem;">Reward Redemption Options</h3>
+      <div class="benefits-list">
+        <div class="benefit-item"><div class="benefit-icon">✈️</div><div class="benefit-text"><h4>Airline Miles Transfer</h4><p>Transfer points to IndiGo 6E, Air India, Vistara, British Airways, Singapore Airlines & more</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏨</div><div class="benefit-text"><h4>Hotel Points</h4><p>Redeem for free nights at ITC, Taj, Marriott, Hilton, IHG via partner transfer</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🛍️</div><div class="benefit-text"><h4>Shopping Vouchers</h4><p>Convert points to Amazon, Flipkart, Myntra, Swiggy vouchers via bank portals</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h4>Statement Credit</h4><p>Redeem points against outstanding bill — simplest option with decent value</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎁</div><div class="benefit-text"><h4>Merchandise</h4><p>Redeem via SmartBuy (HDFC), Axis Portal, SBI Rewardz for electronics, lifestyle</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">⛽</div><div class="benefit-text"><h4>Fuel Benefits</h4><p>Dedicated fuel reward cards like BPCL SBI, ICICI HPCL offer fuel surcharge waivers</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: FEES ======================== -->
+<div id="page-fees" class="page">
+  <div class="section fees-section">
+    <div class="section-header">
+      <span class="section-tag">Fees & Charges</span>
+      <h2 class="section-title">Complete Fee Breakdown</h2>
+      <p class="section-sub">Know every charge before you apply — no hidden surprises</p>
+      <div class="divider"></div>
+    </div>
+    <div class="alert-banner">
+      <span class="alert-icon">💡</span>
+      <div class="alert-text"><strong>Pro Tip:</strong> Many annual fees are waived if you meet the minimum spend milestone. Always check the annual fee reversal conditions before choosing a card.</div>
+    </div>
+    <div class="fees-grid">
+      <div class="fee-card">
+        <h3>HDFC Infinia Metal</h3>
+        <span class="bank-label">HDFC Bank</span>
+        <div class="fee-row"><span class="label">Joining Fee</span><span class="value">₹12,500 + GST</span></div>
+        <div class="fee-row"><span class="label">Annual Fee</span><span class="value">₹12,500 + GST</span></div>
+        <div class="fee-row"><span class="label">Fee Waiver</span><span class="value free">₹10L annual spend</span></div>
+        <div class="fee-row"><span class="label">Forex Markup</span><span class="value">1.99% + GST</span></div>
+        <div class="fee-row"><span class="label">Late Payment</span><span class="value high">Up to ₹1,300</span></div>
+        <div class="fee-row"><span class="label">Cash Advance</span><span class="value high">2.5% (min ₹500)</span></div>
+        <div class="fee-row"><span class="label">Interest Rate</span><span class="value high">3.6%/month</span></div>
+        <div class="fee-row"><span class="label">Over Limit</span><span class="value">2.5% (min ₹600)</span></div>
+      </div>
+      <div class="fee-card">
+        <h3>Axis Bank Atlas</h3>
+        <span class="bank-label">Axis Bank</span>
+        <div class="fee-row"><span class="label">Joining Fee</span><span class="value">₹5,000 + GST</span></div>
+        <div class="fee-row"><span class="label">Annual Fee</span><span class="value">₹5,000 + GST</span></div>
+        <div class="fee-row"><span class="label">Fee Waiver</span><span class="value free">₹7.5L annual spend</span></div>
+        <div class="fee-row"><span class="label">Forex Markup</span><span class="value free">0% (Nil)</span></div>
+        <div class="fee-row"><span class="label">Late Payment</span><span class="value high">Up to ₹1,200</span></div>
+        <div class="fee-row"><span class="label">Cash Advance</span><span class="value high">2.5% (min ₹500)</span></div>
+        <div class="fee-row"><span class="label">Interest Rate</span><span class="value high">3.4%/month</span></div>
+        <div class="fee-row"><span class="label">Over Limit</span><span class="value">2.5% (min ₹500)</span></div>
+      </div>
+      <div class="fee-card">
+        <h3>SBI Card ELITE</h3>
+        <span class="bank-label">SBI Card</span>
+        <div class="fee-row"><span class="label">Joining Fee</span><span class="value">₹4,999 + GST</span></div>
+        <div class="fee-row"><span class="label">Annual Fee</span><span class="value">₹4,999 + GST</span></div>
+        <div class="fee-row"><span class="label">Fee Waiver</span><span class="value free">₹10L annual spend</span></div>
+        <div class="fee-row"><span class="label">Forex Markup</span><span class="value">1.99%</span></div>
+        <div class="fee-row"><span class="label">Late Payment</span><span class="value high">Up to ₹1,300</span></div>
+        <div class="fee-row"><span class="label">Cash Advance</span><span class="value high">2.5% (min ₹500)</span></div>
+        <div class="fee-row"><span class="label">Interest Rate</span><span class="value high">3.5%/month</span></div>
+        <div class="fee-row"><span class="label">Over Limit</span><span class="value">2.5% (min ₹600)</span></div>
+      </div>
+      <div class="fee-card">
+        <h3>Amazon Pay ICICI</h3>
+        <span class="bank-label">ICICI Bank</span>
+        <div class="fee-row"><span class="label">Joining Fee</span><span class="value free">FREE</span></div>
+        <div class="fee-row"><span class="label">Annual Fee</span><span class="value free">FREE (Lifetime)</span></div>
+        <div class="fee-row"><span class="label">Fee Waiver</span><span class="value free">N/A — Always Free</span></div>
+        <div class="fee-row"><span class="label">Forex Markup</span><span class="value">3.5%</span></div>
+        <div class="fee-row"><span class="label">Late Payment</span><span class="value high">Up to ₹1,200</span></div>
+        <div class="fee-row"><span class="label">Cash Advance</span><span class="value high">2.5% (min ₹300)</span></div>
+        <div class="fee-row"><span class="label">Interest Rate</span><span class="value high">3.5%/month</span></div>
+        <div class="fee-row"><span class="label">Over Limit</span><span class="value">2.5%</span></div>
+      </div>
+      <div class="fee-card">
+        <h3>Axis Ace Card</h3>
+        <span class="bank-label">Axis Bank</span>
+        <div class="fee-row"><span class="label">Joining Fee</span><span class="value">₹499 + GST</span></div>
+        <div class="fee-row"><span class="label">Annual Fee</span><span class="value">₹499 + GST</span></div>
+        <div class="fee-row"><span class="label">Fee Waiver</span><span class="value free">₹2L annual spend</span></div>
+        <div class="fee-row"><span class="label">Forex Markup</span><span class="value">3.5%</span></div>
+        <div class="fee-row"><span class="label">Late Payment</span><span class="value high">Up to ₹1,200</span></div>
+        <div class="fee-row"><span class="label">Cash Advance</span><span class="value high">2.5% (min ₹500)</span></div>
+        <div class="fee-row"><span class="label">Interest Rate</span><span class="value high">3.4%/month</span></div>
+        <div class="fee-row"><span class="label">Over Limit</span><span class="value">2.5%</span></div>
+      </div>
+      <div class="fee-card">
+        <h3>Amex Platinum</h3>
+        <span class="bank-label">American Express</span>
+        <div class="fee-row"><span class="label">Joining Fee</span><span class="value high">₹60,000 + GST</span></div>
+        <div class="fee-row"><span class="label">Annual Fee</span><span class="value high">₹60,000 + GST</span></div>
+        <div class="fee-row"><span class="label">Fee Waiver</span><span class="value">Not Available</span></div>
+        <div class="fee-row"><span class="label">Forex Markup</span><span class="value">3.5% + GST</span></div>
+        <div class="fee-row"><span class="label">Late Payment</span><span class="value high">Up to ₹1,500</span></div>
+        <div class="fee-row"><span class="label">Cash Advance</span><span class="value high">3% (min ₹250)</span></div>
+        <div class="fee-row"><span class="label">Interest Rate</span><span class="value">Charge Card — Full</span></div>
+        <div class="fee-row"><span class="label">Over Limit</span><span class="value">No preset limit</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: TRAVEL ======================== -->
+<div id="page-travel" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Travel Cards</span>
+      <h2 class="section-title">Best Travel Credit Cards</h2>
+      <p class="section-sub">Miles, lounge access, forex savings & travel insurance</p>
+      <div class="divider"></div>
+    </div>
+    <div class="benefits-list" style="margin-bottom:3rem;">
+      <div class="benefit-item"><div class="benefit-icon">✈️</div><div class="benefit-text"><h4>No Forex Markup</h4><p>Axis Atlas & HDFC Infinia offer near-zero forex markup — save 3–3.5% on every international transaction</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🏨</div><div class="benefit-text"><h4>Hotel Upgrades</h4><p>Amex Fine Hotels & Resorts, HDFC premium cards offer complimentary room upgrades & late checkout</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🛡️</div><div class="benefit-text"><h4>Travel Insurance</h4><p>Premium cards include air accident cover ₹1–3 Cr, lost baggage cover & trip cancellation protection</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🎫</div><div class="benefit-text"><h4>Airline Mile Transfers</h4><p>Transfer credit card points to IndiGo, Air India, Vistara, British Airways at 1:1 or better ratios</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">📱</div><div class="benefit-text"><h4>Concierge Service</h4><p>Book flights, hotels & restaurants worldwide through dedicated travel desks — available 24/7</p></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🌐</div><div class="benefit-text"><h4>Global Network</h4><p>Visa Infinite & Mastercard World accepted at 100M+ merchants globally with no additional charges</p></div></div>
+    </div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem;">Travel Card Rankings</h3>
+    <table class="comp-table">
+      <thead><tr><th>Card</th><th>Forex Markup</th><th>Lounge Access</th><th>Miles Transfer</th><th>Travel Insurance</th><th>Annual Fee</th></tr></thead>
+      <tbody>
+        <tr><td>Axis Atlas</td><td><span class="badge-yes">0%</span></td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">10+ Partners</span></td><td>₹50L cover</td><td>₹5,000</td></tr>
+        <tr><td>HDFC Infinia</td><td>1.99%</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">Airlines+Hotels</span></td><td>₹3 Cr Air Acc.</td><td>₹12,500</td></tr>
+        <tr><td>Axis Magnus</td><td>2%</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">10+ Partners</span></td><td>₹50L cover</td><td>₹10,000</td></tr>
+        <tr><td>YES First Exclusive</td><td>1.75%</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">4 Partners</span></td><td>₹1 Cr cover</td><td>₹10,000</td></tr>
+        <tr><td>SBI AURUM</td><td>1.99%</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-lim">Limited</span></td><td>₹1.5 Cr cover</td><td>₹9,999</td></tr>
+        <tr><td>HDFC Regalia Gold</td><td>2%</td><td>18 visits</td><td><span class="badge-lim">Via SmartBuy</span></td><td>₹1.5 Cr cover</td><td>₹2,500</td></tr>
+        <tr><td>Amex Platinum</td><td>3.5%</td><td><span class="badge-yes">Centurion+PP</span></td><td><span class="badge-yes">Intl Airlines</span></td><td>₹2 Cr cover</td><td>₹60,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== PAGE: SHOPPING ======================== -->
+<div id="page-shopping" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Shopping Cards</span>
+      <h2 class="section-title">Best Shopping Credit Cards</h2>
+      <p class="section-sub">Maximize cashback and rewards on every online & offline purchase</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cards-grid">
+      <div class="cc-card">
+        <div class="cc-card-visual grad-4"><div class="vc-chip"></div><div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AMAZON PAY ICICI</div></div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Best Cashback</span>
+          <h3>Amazon Pay ICICI</h3>
+          <div class="bank">ICICI Bank</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% cashback on all Amazon purchases (Prime)</div>
+            <div class="cc-feature">Cashback on Amazon Pay merchants too</div>
+            <div class="cc-feature">No cap on total cashback</div>
+            <div class="cc-feature">Lifetime FREE</div>
+          </div>
+          <div class="cc-footer"><span class="cc-fee">Fee: <span style="color:var(--green)">FREE</span></span><div class="stars">★★★★★</div></div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual grad-5"><div class="vc-chip"></div><div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">AXIS FLIPKART</div></div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-shopping">Best for Flipkart</span>
+          <h3>Axis Flipkart Card</h3>
+          <div class="bank">Axis Bank</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% unlimited cashback on Flipkart & Myntra</div>
+            <div class="cc-feature">4% on preferred merchants</div>
+            <div class="cc-feature">Extra discounts during Big Billion Days</div>
+          </div>
+          <div class="cc-footer"><span class="cc-fee">Fee: <span>₹500</span></span><div class="stars">★★★★☆</div></div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual" style="background:linear-gradient(135deg,#0a1500,#152500)"><div class="vc-chip"></div><div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">SBI SIMPLYCLICK</div></div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-shopping">Best 10X Online</span>
+          <h3>SBI SimplyCLICK</h3>
+          <div class="bank">SBI Card</div>
+          <div class="cc-features">
+            <div class="cc-feature">10X RP on Amazon, Cleartrip, Apollo, Swiggy</div>
+            <div class="cc-feature">5X RP on all other online spends</div>
+            <div class="cc-feature">₹500 Amazon voucher on joining</div>
+          </div>
+          <div class="cc-footer"><span class="cc-fee">Fee: <span>₹499</span></span><div class="stars">★★★★☆</div></div>
+        </div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card-visual grad-4"><div class="vc-chip"></div><div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">HDFC MILLENNIA</div></div>
+        <div class="cc-card-body">
+          <span class="cc-tag tag-cashback">Cashback Everyday</span>
+          <h3>HDFC Millennia</h3>
+          <div class="bank">HDFC Bank</div>
+          <div class="cc-features">
+            <div class="cc-feature">5% cashback on Amazon, Flipkart, Myntra</div>
+            <div class="cc-feature">2.5% on Apple, Tata CLiQ, Swiggy, Zomato</div>
+            <div class="cc-feature">1% cashback on all other spends</div>
+          </div>
+          <div class="cc-footer"><span class="cc-fee">Fee: <span>₹1,000</span></span><div class="stars">★★★★☆</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: PREMIUM ======================== -->
+<div id="page-premium" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Super Premium</span>
+      <h2 class="section-title">Premium & Super Premium Cards</h2>
+      <p class="section-sub">Elite privileges, metal cards, and white-glove service</p>
+      <div class="divider"></div>
+    </div>
+    <div style="margin-bottom:3rem;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem;">Premium Card Comparison</h3>
+      <table class="comp-table">
+        <thead><tr><th>Card</th><th>Annual Fee</th><th>Lounge</th><th>Golf</th><th>Concierge</th><th>Metal Card</th><th>Rating</th></tr></thead>
+        <tbody>
+          <tr><td>HDFC Infinia Metal</td><td>₹12,500</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">6/month</span></td><td><span class="badge-yes">24/7</span></td><td><span class="badge-yes">Yes</span></td><td>★★★★★</td></tr>
+          <tr><td>Amex Platinum</td><td>₹60,000</td><td><span class="badge-yes">Centurion+PP</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-yes">Dedicated</span></td><td><span class="badge-yes">Yes</span></td><td>★★★★★</td></tr>
+          <tr><td>Axis Magnus</td><td>₹10,000</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-no">No</span></td><td>★★★★★</td></tr>
+          <tr><td>SBI Card AURUM</td><td>₹9,999</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">4/month</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-no">No</span></td><td>★★★★☆</td></tr>
+          <tr><td>ICICI Emeralde</td><td>₹12,000</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-yes">Metal</span></td><td>★★★★★</td></tr>
+          <tr><td>HDFC Diners Black</td><td>₹10,000</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">6/qtr</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-no">No</span></td><td>★★★★★</td></tr>
+          <tr><td>IndusInd Pinnacle</td><td>₹12,000</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">Yes</span></td><td><span class="badge-yes">24/7</span></td><td><span class="badge-yes">Metal</span></td><td>★★★★☆</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem;">Exclusive Premium Benefits</h3>
+      <div class="benefits-list">
+        <div class="benefit-item"><div class="benefit-icon">🏌️</div><div class="benefit-text"><h4>Golf Privileges</h4><p>Complimentary golf rounds at premium courses across India — DLF, Eagleton, KGA & 900+ globally</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🍽️</div><div class="benefit-text"><h4>Fine Dining</h4><p>Exclusive tables at Taj, ITC, JW Marriott, Leela. Complimentary meals, wine pairings & chef's tables</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🛎️</div><div class="benefit-text"><h4>Personal Concierge</h4><p>24/7 dedicated concierge for reservations, travel planning, event ticketing & lifestyle requests</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text"><h4>Welcome Benefits</h4><p>Joining gifts worth ₹5,000–₹15,000 including hotel stays, dining vouchers & travel credits</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎬</div><div class="benefit-text"><h4>Entertainment</h4><p>BookMyShow Buy 1 Get 1 (2–4 tickets/month), priority access to events & exclusive screenings</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏥</div><div class="benefit-text"><h4>Health & Wellness</h4><p>Priority doctor appointments, health check-up discounts, spa privileges & fitness club memberships</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: COMPARE ======================== -->
+<div id="page-compare" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Card Comparison</span>
+      <h2 class="section-title">Compare Top Cards</h2>
+      <p class="section-sub">Side-by-side comparison of India's most popular credit cards</p>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto;">
+    <table class="comp-table" style="min-width:800px;">
+      <thead><tr>
+        <th>Feature</th>
+        <th>HDFC Infinia</th>
+        <th>Axis Atlas</th>
+        <th>SBI ELITE</th>
+        <th>Amazon Pay ICICI</th>
+        <th>Amex Gold</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Annual Fee</td><td>₹12,500</td><td>₹5,000</td><td>₹4,999</td><td><span class="badge-yes">FREE</span></td><td>₹4,500</td></tr>
+        <tr><td>Reward Rate</td><td>5 RP/₹150</td><td>5 Miles/₹100</td><td>5X Select</td><td>5% Amazon</td><td>3X Travel</td></tr>
+        <tr><td>Effective Return</td><td>~3.3%</td><td>~2.5%</td><td>~1.5%</td><td><span class="badge-yes">5%</span></td><td>~2%</td></tr>
+        <tr><td>Lounge Access</td><td><span class="badge-yes">Unlimited</span></td><td><span class="badge-yes">Unlimited</span></td><td>12/year</td><td><span class="badge-no">None</span></td><td>4/year</td></tr>
+        <tr><td>Golf</td><td><span class="badge-yes">6/month</span></td><td><span class="badge-lim">Paid</span></td><td><span class="badge-lim">Paid</span></td><td><span class="badge-no">No</span></td><td><span class="badge-no">No</span></td></tr>
+        <tr><td>Forex Markup</td><td>1.99%</td><td><span class="badge-yes">0%</span></td><td>1.99%</td><td>3.5%</td><td>3.5%</td></tr>
+        <tr><td>Miles Transfer</td><td><span class="badge-yes">Yes</span></td><td><span class="badge-yes">10+ Partners</span></td><td><span class="badge-lim">Limited</span></td><td><span class="badge-no">No</span></td><td><span class="badge-yes">7 Partners</span></td></tr>
+        <tr><td>Insurance Cover</td><td>₹3 Cr Air</td><td>₹50L Travel</td><td>₹50L Travel</td><td>₹50L Acc.</td><td>₹50L Travel</td></tr>
+        <tr><td>Welcome Gift</td><td>12,500 RP</td><td>5,000 Miles</td><td>₹5,000 GV</td><td>Instant Cashback</td><td>₹5K Taj</td></tr>
+        <tr><td>Best For</td><td>Premium All</td><td>Travel</td><td>Lifestyle</td><td>Amazon</td><td>Miles + Dining</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: ELIGIBILITY ======================== -->
+<div id="page-eligibility" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Eligibility Criteria</span>
+      <h2 class="section-title">Do You Qualify?</h2>
+      <p class="section-sub">Check minimum requirements before applying for any credit card</p>
+      <div class="divider"></div>
+    </div>
+    <div class="elig-grid" style="margin-bottom:3rem;">
+      <div class="elig-box"><div class="icon">🎂</div><h4>Age</h4><p>21–60 years (primary)<br>18+ for add-on cards</p></div>
+      <div class="elig-box"><div class="icon">💼</div><h4>Employment</h4><p>Salaried, self-employed, professionals & business owners eligible</p></div>
+      <div class="elig-box"><div class="icon">💰</div><h4>Income</h4><p>₹25,000–₹1L+ per month depending on card tier</p></div>
+      <div class="elig-box"><div class="icon">📊</div><h4>CIBIL Score</h4><p>750+ for premium cards<br>700+ for basic cards</p></div>
+      <div class="elig-box"><div class="icon">🏦</div><h4>Bank Account</h4><p>Not mandatory but preferred for existing bank customers</p></div>
+      <div class="elig-box"><div class="icon">📋</div><h4>KYC Docs</h4><p>Aadhaar, PAN card, address proof & income proof</p></div>
+    </div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem;">Income Requirements by Card Tier</h3>
+    <table class="comp-table">
+      <thead><tr><th>Card Tier</th><th>Card Examples</th><th>Min Monthly Income</th><th>Min CIBIL</th><th>Annual Fee Range</th></tr></thead>
+      <tbody>
+        <tr><td>Entry Level</td><td>Amazon Pay ICICI, SBI SimplyCLICK</td><td>₹15,000–₹25,000</td><td>700+</td><td>Free–₹500</td></tr>
+        <tr><td>Mid-tier</td><td>HDFC Millennia, Axis Ace, HDFC Regalia</td><td>₹30,000–₹50,000</td><td>720+</td><td>₹500–₹2,500</td></tr>
+        <tr><td>Premium</td><td>SBI ELITE, ICICI Sapphiro, Axis Atlas</td><td>₹75,000–₹1,50,000</td><td>750+</td><td>₹2,500–₹8,000</td></tr>
+        <tr><td>Super Premium</td><td>HDFC Infinia, Amex Platinum, Axis Magnus</td><td>₹2,00,000+</td><td>800+</td><td>₹10,000–₹60,000</td></tr>
+        <tr><td>Invite-Only</td><td>Amex Centurion (Black Card)</td><td>₹10,00,000+</td><td>800+</td><td>₹2,50,000+</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:1rem;">Documents Required</h3>
+      <div class="benefits-list">
+        <div class="benefit-item"><div class="benefit-icon">🪪</div><div class="benefit-text"><h4>Identity Proof</h4><p>Aadhaar Card, PAN Card, Passport, Voter ID (any one)</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏠</div><div class="benefit-text"><h4>Address Proof</h4><p>Aadhaar, Utility Bill, Rent Agreement, Bank Statement (3 months)</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📄</div><div class="benefit-text"><h4>Income Proof (Salaried)</h4><p>Latest 3 months salary slips + Form 16 or ITR for last 2 years</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📑</div><div class="benefit-text"><h4>Income Proof (Self-Employed)</h4><p>ITR for last 2 years + CA-certified audited financials</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: TIPS ======================== -->
+<div id="page-tips" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Expert Tips</span>
+      <h2 class="section-title">Smart Credit Card Tips</h2>
+      <p class="section-sub">Maximize benefits, avoid pitfalls & build a powerful credit card strategy</p>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">TIP 01</div><h4 class="tl-title">Always Pay Full Balance</h4><p class="tl-desc">Credit card interest rates in India range from 36–42% per annum. Carrying a balance immediately wipes out all your rewards. Always pay the full outstanding amount before the due date.</p></div>
+      <div class="tl-item"><div class="tl-year">TIP 02</div><h4 class="tl-title">Stack Cards for Maximum Returns</h4><p class="tl-desc">Use Amazon Pay ICICI for Amazon, Axis Ace for utility bills, HDFC Millennia for Swiggy/Zomato, and a travel card for flights. Each card maximizes returns in its category.</p></div>
+      <div class="tl-item"><div class="tl-year">TIP 03</div><h4 class="tl-title">Use SmartBuy for 10X Points</h4><p class="tl-desc">HDFC's SmartBuy portal gives 10X reward points on travel, shopping & dining bookings. This can make even mid-tier cards like Regalia offer premium-level returns.</p></div>
+      <div class="tl-item"><div class="tl-year">TIP 04</div><h4 class="tl-title">Transfer Points Before Expiry</h4><p class="tl-desc">Most reward points expire in 2–3 years. Regularly transfer to airline miles or redeem against vouchers. HDFC RP never expire, but Amex MR points must be actively managed.</p></div>
+      <div class="tl-item"><div class="tl-year">TIP 05</div><h4 class="tl-title">Monitor Credit Utilization</h4><p class="tl-desc">Keep your credit utilization below 30% of total limit. High utilization hurts your CIBIL score significantly. Spread spends across multiple cards to maintain a healthy ratio.</p></div>
+      <div class="tl-item"><div class="tl-year">TIP 06</div><h4 class="tl-title">Meet Annual Fee Waiver Targets</h4><p class="tl-desc">Most cards waive the annual fee if you meet the spend milestone. Plan your annual purchases around this — make sure rent, insurance, and large buys go through the card.</p></div>
+      <div class="tl-item"><div class="tl-year">TIP 07</div><h4 class="tl-title">Avoid Cash Advances</h4><p class="tl-desc">Cash advance on credit cards attracts 2.5–3% fee immediately plus 42%+ annual interest from day one. No grace period. This is one of the most expensive financial mistakes.</p></div>
+      <div class="tl-item"><div class="tl-year">TIP 08</div><h4 class="tl-title">Set Up Auto-Pay for Minimum</h4><p class="tl-desc">As a safety net, set auto-pay for at least the minimum amount due. This prevents late payment fees and protects your CIBIL score even if you forget to pay manually.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PAGE: APPLY ======================== -->
+<div id="page-apply" class="page">
+  <div class="section">
+    <div class="section-header">
+      <span class="section-tag">Quick Apply</span>
+      <h2 class="section-title">Apply for a Credit Card</h2>
+      <p class="section-sub">Get pre-approved in minutes — 100% digital process</p>
+      <div class="divider"></div>
+    </div>
+    <div class="apply-form">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:0.5rem;">Application Form</h3>
+      <p style="color:var(--text-muted);font-size:0.83rem;margin-bottom:2rem;">Fill in your details and we'll match you with the best cards</p>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Rahul"></div>
+        <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Sharma"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Mobile Number</label><input class="form-input" type="tel" placeholder="+91 98765 43210"></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email" placeholder="rahul@example.com"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Annual Income (₹)</label><input class="form-input" type="text" placeholder="₹ 12,00,000"></div>
+        <div class="form-group"><label class="form-label">Employment Type</label>
+          <select class="form-select"><option>Salaried</option><option>Self-Employed</option><option>Business Owner</option><option>Freelancer</option></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">PAN Card Number</label><input class="form-input" type="text" placeholder="ABCDE1234F"></div>
+        <div class="form-group"><label class="form-label">City of Residence</label><input class="form-input" type="text" placeholder="Mumbai"></div>
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label class="form-label">Preferred Card Category</label>
+        <select class="form-select"><option>Travel & Lounge Access</option><option>Cashback & Rewards</option><option>Online Shopping</option><option>Fuel Benefits</option><option>Premium / Lifestyle</option></select>
+      </div>
+      <div class="form-group" style="margin-bottom:2rem;">
+        <label class="form-label">Monthly Spend (₹)</label>
+        <div class="progress-bar" style="margin-top:1rem;"><div class="progress-fill" id="spend-bar" style="width:40%;"></div></div>
+        <input type="range" min="5000" max="200000" value="50000" oninput="updateSpend(this)" style="width:100%;accent-color:var(--gold);margin-top:0.5rem;">
+        <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-muted);margin-top:0.3rem;"><span>₹5,000</span><span id="spend-val" style="color:var(--gold);">₹50,000</span><span>₹2,00,000</span></div>
+      </div>
+      <button class="btn-gold" style="width:100%;padding:1rem;">Check Card Eligibility →</button>
+      <p style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:1rem;">By submitting, you consent to a soft credit check (no CIBIL impact)</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">CardVault</div>
+      <p>India's most comprehensive, unbiased credit card comparison platform. We help over 2 million Indians find the perfect credit card for their lifestyle and spending habits.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Cards by Bank</h4>
+      <div class="footer-links">
+        <span class="footer-link" onclick="showPage('hdfc')">HDFC Bank Cards</span>
+        <span class="footer-link" onclick="showPage('sbi')">SBI Cards</span>
+        <span class="footer-link" onclick="showPage('icici')">ICICI Bank Cards</span>
+        <span class="footer-link" onclick="showPage('axis')">Axis Bank Cards</span>
+        <span class="footer-link" onclick="showPage('amex')">Amex Cards</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>By Category</h4>
+      <div class="footer-links">
+        <span class="footer-link" onclick="showPage('travel')">Travel Cards</span>
+        <span class="footer-link" onclick="showPage('shopping')">Shopping Cards</span>
+        <span class="footer-link" onclick="showPage('premium')">Premium Cards</span>
+        <span class="footer-link" onclick="showPage('rewards')">Cashback Cards</span>
+        <span class="footer-link" onclick="showPage('lounge')">Lounge Access</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <div class="footer-links">
+        <span class="footer-link" onclick="showPage('compare')">Compare Cards</span>
+        <span class="footer-link" onclick="showPage('fees')">Fee Calculator</span>
+        <span class="footer-link" onclick="showPage('eligibility')">Eligibility Check</span>
+        <span class="footer-link" onclick="showPage('tips')">Expert Tips</span>
+        <span class="footer-link" onclick="showPage('apply')">Apply Now</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 CardVault India. All rights reserved.</div>
+    <div class="disclaimer">*Fees and benefits are approximate and subject to change. Always verify on the bank's official website before applying. CardVault is not a bank or financial institution.</div>
+  </div>
+</footer>
+
+<script>
+// All card data
+const allCards = [
+  {name:'HDFC Infinia Metal',bank:'HDFC Bank',category:'premium',tag:'Super Premium',tagClass:'tag-premium',fee:'₹12,500',stars:'★★★★★',grad:'grad-3',features:['5 RP per ₹150 spends','Unlimited lounge access worldwide','Golf: 6 rounds/month','1.5% forex markup'],page:'hdfc'},
+  {name:'Axis Atlas',bank:'Axis Bank',category:'travel',tag:'Travel',tagClass:'tag-travel',fee:'₹5,000',stars:'★★★★★',grad:'grad-2',features:['5 EDGE Miles/₹100 on travel','Unlimited Dragon Pass lounge','Transfer to 10+ airlines','Zero forex markup'],page:'axis'},
+  {name:'Amazon Pay ICICI',bank:'ICICI Bank',category:'cashback',tag:'Cashback',tagClass:'tag-cashback',fee:'FREE',feeColor:'var(--green)',stars:'★★★★★',grad:'grad-4',features:['5% cashback on Amazon (Prime)','2% on bills & Amazon non-Prime','1% on all other spends','Lifetime free card'],page:'icici'},
+  {name:'SBI Card ELITE',bank:'SBI Card',category:'premium',tag:'Premium',tagClass:'tag-premium',fee:'₹4,999',stars:'★★★★☆',grad:'',style:'background:linear-gradient(135deg,#00100a,#002015)',features:['5X RP on dining & groceries','6 intl + domestic lounge/year','₹5,000 welcome gift voucher','Buy 1 Get 1 on BookMyShow'],page:'sbi'},
+  {name:'Axis Ace Card',bank:'Axis Bank',category:'cashback',tag:'Cashback',tagClass:'tag-cashback',fee:'₹499',stars:'★★★★★',grad:'',style:'background:linear-gradient(135deg,#002010,#004020)',features:['5% on utility bills via Google Pay','4% on Swiggy, Zomato, Ola','2% on all other spends','No cashback cap'],page:'axis'},
+  {name:'HDFC Regalia Gold',bank:'HDFC Bank',category:'travel',tag:'Travel',tagClass:'tag-travel',fee:'₹2,500',stars:'★★★★☆',grad:'grad-1',features:['4 RP per ₹150 spends','12 domestic + 6 intl lounge/year','10X via HDFC SmartBuy','Fee waiver at ₹5L spend'],page:'hdfc'},
+  {name:'Amex Platinum Charge',bank:'American Express',category:'premium',tag:'Ultra Premium',tagClass:'tag-premium',fee:'₹60,000',stars:'★★★★★',grad:'',style:'background:linear-gradient(135deg,#0a0a0a,#1a1a1a)',features:['Unlimited Centurion + Priority Pass','5X MR on travel spends','Fine Hotels & Resorts access','Personal Travel Advisor'],page:'amex'},
+  {name:'SBI AURUM',bank:'SBI Card',category:'premium',tag:'Super Premium',tagClass:'tag-premium',fee:'₹9,999',stars:'★★★★★',grad:'',style:'background:linear-gradient(135deg,#100010,#200020)',features:['6 RP per ₹100 all categories','Unlimited Priority Pass lounge','4 golf rounds/month','Taj Epicure membership'],page:'sbi'},
+  {name:'Axis Flipkart Card',bank:'Axis Bank',category:'shopping',tag:'Shopping',tagClass:'tag-shopping',fee:'₹500',stars:'★★★★☆',grad:'grad-5',features:['5% cashback on Flipkart & Myntra','4% on preferred merchants','1.5% on all other spends','No cashback cap'],page:'axis'},
+  {name:'HDFC Millennia',bank:'HDFC Bank',category:'cashback',tag:'Cashback',tagClass:'tag-cashback',fee:'₹1,000',stars:'★★★★☆',grad:'grad-4',features:['5% cashback on Amazon/Flipkart','2.5% on Swiggy, Zomato, Tata CLiQ','1% on all other spends','8 domestic lounge visits/year'],page:'hdfc'},
+  {name:'ICICI Sapphiro',bank:'ICICI Bank',category:'premium',tag:'Premium',tagClass:'tag-premium',fee:'₹6,500',stars:'★★★★☆',grad:'',style:'background:linear-gradient(135deg,#200030,#400060)',features:['4 RP/₹100 intl, 2 RP/₹100 domestic','4 intl + domestic lounge/quarter','Golf: 2 rounds/month','Welcome vouchers ₹9,000'],page:'icici'},
+  {name:'SBI SimplyCLICK',bank:'SBI Card',category:'shopping',tag:'Online Shopping',tagClass:'tag-shopping',fee:'₹499',stars:'★★★★☆',grad:'',style:'background:linear-gradient(135deg,#0a1500,#152500)',features:['10X RP on Amazon, Cleartrip, Swiggy','5X RP on all online spends','₹500 Amazon voucher on joining','Fee reversal at ₹1L/year'],page:'sbi'},
+];
+
+let currentFilter = 'all';
+
+function renderFeaturedCards(filter){
+  const grid = document.getElementById('featured-grid');
+  const cards = filter === 'all' ? allCards : allCards.filter(c=>c.category===filter);
+  grid.innerHTML = cards.map(c=>`
+    <div class="cc-card" onclick="showPage('${c.page}')">
+      <div class="cc-card-visual ${c.grad}" style="${c.style||''}">
+        <div class="vc-chip"></div>
+        <div style="position:absolute;bottom:12px;left:15px;font-size:0.6rem;letter-spacing:2px;color:rgba(255,255,255,0.8)">${c.name.toUpperCase()}</div>
+      </div>
+      <div class="cc-card-body">
+        <span class="cc-tag ${c.tagClass}">${c.tag}</span>
+        <h3>${c.name}</h3>
+        <div class="bank">${c.bank}</div>
+        <div class="cc-features">
+          ${c.features.map(f=>`<div class="cc-feature">${f}</div>`).join('')}
+        </div>
+        <div class="cc-footer">
+          <span class="cc-fee">Annual Fee: <span style="color:${c.feeColor||'var(--text)'}">${c.fee}</span></span>
+          <div class="stars">${c.stars}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterCards(cat, el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  currentFilter = cat;
+  renderFeaturedCards(cat);
+}
+
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  const links = document.querySelectorAll('.nav-link');
+  links.forEach(l=>{ if(l.getAttribute('onclick').includes("'"+id+"'")) l.classList.add('active'); });
+  window.scrollTo(0,70);
+  if(id==='featured') renderFeaturedCards(currentFilter);
+  initReveal();
+}
+
+// PARTICLES
+function createParticles(){
+  const container = document.getElementById('particles');
+  if(!container) return;
+  for(let i=0;i<30;i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random()*100+'%';
+    p.style.animationDuration = (8+Math.random()*12)+'s';
+    p.style.animationDelay = (Math.random()*10)+'s';
+    p.style.width = p.style.height = (1+Math.random()*3)+'px';
+    container.appendChild(p);
+  }
+}
+
+// COUNT UP
+function countUp(){
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    const target = parseInt(el.dataset.count);
+    let current = 0;
+    const step = target/60;
+    const timer = setInterval(()=>{
+      current = Math.min(current+step, target);
+      el.textContent = Math.floor(current)+(target>=100?'%':target>=2?'+':'');
+      if(current>=target) clearInterval(timer);
+    },25);
+  });
+}
+
+// REVEAL ON SCROLL
+function initReveal(){
+  setTimeout(()=>{
+    document.querySelectorAll('.reveal').forEach(el=>{
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight*0.9) el.classList.add('visible');
+    });
+  },100);
+}
+
+function updateSpend(input){
+  const val = parseInt(input.value);
+  document.getElementById('spend-val').textContent = '₹'+val.toLocaleString('en-IN');
+  document.getElementById('spend-bar').style.width = ((val-5000)/195000*100)+'%';
+}
+
+window.addEventListener('scroll', initReveal);
+
+// INIT
+createParticles();
+setTimeout(countUp, 500);
+renderFeaturedCards('all');
+initReveal();
+</script>
+</body>
+</html>
