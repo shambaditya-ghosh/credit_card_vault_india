@@ -31,11 +31,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "server.js": {
-      "memory": 512,
-      "maxDuration": 30
-    }
   }
 }
