@@ -8,8 +8,10 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-node_modules/
-.env
-__pycache__/
-*.log
-.vscode/
+
+/Users/shambaditya_mac/Documents/card_vault_project/.idea
+# Ignore all .idea files except for the ones that are necessary for project configuration
+/.idea/*
+!.idea/modules.xml
+!.idea/vcs.xml
+.idea/workspace.xml
