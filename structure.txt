@@ -1,0 +1,44 @@
+.
+├── LICENSE
+├── README.md
+├── backend
+│   ├── controllers
+│   │   ├── applicationsController.js
+│   │   ├── authController.js
+│   │   ├── cardsController.js
+│   │   ├── comparisonController.js
+│   │   ├── eligibilityController.js
+│   │   └── searchController.js
+│   ├── data
+│   │   ├── banks.js
+│   │   └── cards.js
+│   ├── middleware
+│   │   ├── auth.js
+│   │   ├── errorHandler.js
+│   │   ├── logger.js
+│   │   ├── notFound.js
+│   │   └── rateLimiter.js
+│   └── routes
+│       ├── applications.js
+│       ├── auth.js
+│       ├── banks.js
+│       ├── cards.js
+│       ├── categories.js
+│       ├── comparison.js
+│       ├── eligibility.js
+│       ├── lounges.js
+│       ├── rewards.js
+│       └── search.js
+├── frontend
+│   └── public
+│       └── index.html
+├── index.html
+├── package-lock.json
+├── package.json
+├── server.js
+├── structure.txt
+├── tests
+│   └── api.test.js
+└── vercel.json
+
+9 directories, 33 files
